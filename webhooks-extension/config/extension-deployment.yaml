@@ -145,7 +145,7 @@ spec:
             value: web
           # If this endpoint's protocol is https, ssl verification will be enabled on the github webhook
           - name: WEBHOOK_CALLBACK_URL
-            value: "http://listener.IPADDRESS.nip.io"
+            value: "http://listener.9.174.25.141.nip.io"
           - name: SERVICE_ACCOUNT
             valueFrom:
               fieldRef:

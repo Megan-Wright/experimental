@@ -20,15 +20,11 @@ function validateInputs(value, id) {
   }
 
   if (id === "name" || id === "newSecretName") {
-    if (trimmed.length > 253) {
+    if (trimmed.length > 57) {
       return false;
     }
 
-    if (trimmed.endsWith(".")) {
-      return false;
-    }
-
-    if (/[^-.a-z1-9]/.test(trimmed)) {
+    if (!/[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$/.test(trimmed)) {
       return false;
     }
   }
@@ -554,7 +550,7 @@ class WebhookCreatePage extends Component {
                     labelText="Display Name"
                     data-testid="display-name-entry"
                     invalid={invalidFields.indexOf('name') > -1}
-                    invalidText="Must be less than 563 characters, contain only lowercase alphanumeric character, . or - ."
+                    invalidText="Must be less than 57 characters, contain only lowercase alphanumeric character, . or - ."
                   />
                 </div>
               </div>
